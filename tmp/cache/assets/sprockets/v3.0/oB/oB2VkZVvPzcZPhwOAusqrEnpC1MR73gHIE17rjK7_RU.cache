@@ -1,0 +1,33 @@
+I"æ(function() {
+  var allowAction, fire, stopEverything;
+
+  fire = Rails.fire, stopEverything = Rails.stopEverything;
+
+  Rails.handleConfirm = function(e) {
+    if (!allowAction(this)) {
+      return stopEverything(e);
+    }
+  };
+
+  Rails.confirm = function(message, element) {
+    return confirm(message);
+  };
+
+  allowAction = function(element) {
+    var answer, callback, message;
+    message = element.getAttribute('data-confirm');
+    if (!message) {
+      return true;
+    }
+    answer = false;
+    if (fire(element, 'confirm')) {
+      try {
+        answer = Rails.confirm(message, element);
+      } catch (error) {}
+      callback = fire(element, 'confirm:complete', [answer]);
+    }
+    return answer && callback;
+  };
+
+}).call(this);
+:ET

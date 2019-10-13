@@ -1,0 +1,16 @@
+I"<(function() {
+  var nonce;
+
+  nonce = null;
+
+  Rails.loadCSPNonce = function() {
+    var ref;
+    return nonce = (ref = document.querySelector("meta[name=csp-nonce]")) != null ? ref.content : void 0;
+  };
+
+  Rails.cspNonce = function() {
+    return nonce != null ? nonce : Rails.loadCSPNonce();
+  };
+
+}).call(this);
+:ET

@@ -1,0 +1,64 @@
+I"Ð(function() {
+  var CustomEvent, fire, matches, preventDefault;
+
+  matches = Rails.matches;
+
+  CustomEvent = window.CustomEvent;
+
+  if (typeof CustomEvent !== 'function') {
+    CustomEvent = function(event, params) {
+      var evt;
+      evt = document.createEvent('CustomEvent');
+      evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+      return evt;
+    };
+    CustomEvent.prototype = window.Event.prototype;
+    preventDefault = CustomEvent.prototype.preventDefault;
+    CustomEvent.prototype.preventDefault = function() {
+      var result;
+      result = preventDefault.call(this);
+      if (this.cancelable && !this.defaultPrevented) {
+        Object.defineProperty(this, 'defaultPrevented', {
+          get: function() {
+            return true;
+          }
+        });
+      }
+      return result;
+    };
+  }
+
+  fire = Rails.fire = function(obj, name, data) {
+    var event;
+    event = new CustomEvent(name, {
+      bubbles: true,
+      cancelable: true,
+      detail: data
+    });
+    obj.dispatchEvent(event);
+    return !event.defaultPrevented;
+  };
+
+  Rails.stopEverything = function(e) {
+    fire(e.target, 'ujs:everythingStopped');
+    e.preventDefault();
+    e.stopPropagation();
+    return e.stopImmediatePropagation();
+  };
+
+  Rails.delegate = function(element, selector, eventType, handler) {
+    return element.addEventListener(eventType, function(e) {
+      var target;
+      target = e.target;
+      while (!(!(target instanceof Element) || matches(target, selector))) {
+        target = target.parentNode;
+      }
+      if (target instanceof Element && handler.call(target, e) === false) {
+        e.preventDefault();
+        return e.stopPropagation();
+      }
+    });
+  };
+
+}).call(this);
+:ET

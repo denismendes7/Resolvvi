@@ -1,0 +1,1286 @@
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from block in <main> at /home/pc/.rvm/gems/ruby-2.6.5/gems/coffee-rails-4.2.2/lib/coffee/rails/template_handler.rb:17)
+Started GET "/" for ::1 at 2019-10-13 15:31:41 -0300
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+rails (c46475ed6259) activerecord/lib/active_record/migration.rb:603:in `check_pending!'
+rails (c46475ed6259) activerecord/lib/active_record/migration.rb:568:in `block (2 levels) in call'
+rails (c46475ed6259) activesupport/lib/active_support/evented_file_update_checker.rb:88:in `execute'
+rails (c46475ed6259) activerecord/lib/active_record/migration.rb:573:in `block in call'
+rails (c46475ed6259) activerecord/lib/active_record/migration.rb:565:in `synchronize'
+rails (c46475ed6259) activerecord/lib/active_record/migration.rb:565:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+rails (c46475ed6259) activesupport/lib/active_support/callbacks.rb:100:in `run_callbacks'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/executor.rb:14:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/debug_exceptions.rb:30:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+rails (c46475ed6259) railties/lib/rails/rack/logger.rb:37:in `call_app'
+rails (c46475ed6259) railties/lib/rails/rack/logger.rb:26:in `block in call'
+rails (c46475ed6259) activesupport/lib/active_support/tagged_logging.rb:86:in `block in tagged'
+rails (c46475ed6259) activesupport/lib/active_support/tagged_logging.rb:28:in `tagged'
+rails (c46475ed6259) activesupport/lib/active_support/tagged_logging.rb:86:in `tagged'
+rails (c46475ed6259) railties/lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+rails (c46475ed6259) activesupport/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/executor.rb:14:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/static.rb:129:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rails (c46475ed6259) actionpack/lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rails (c46475ed6259) railties/lib/rails/engine.rb:527:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (121.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (121.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191012194445)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191012194445"]]
+  [1m[36mTRANSACTION (112.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStates (20191012203426)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "states" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "uf" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191012203426"]]
+  [1m[36mTRANSACTION (115.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLawyers (20191012204554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "lawyers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "state_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_5bf5a63f0c"
+FOREIGN KEY ("state_id")
+  REFERENCES "states" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_lawyers_on_state_id" ON "lawyers" ("state_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191012204554"]]
+  [1m[36mTRANSACTION (113.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStateToUser (20191012205241)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "state_id" integer[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_state_id" ON "users" ("state_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "state_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_state_id" ON "ausers" ("state_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id" FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "state_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_606ec65343"
+FOREIGN KEY ("state_id")
+  REFERENCES "states" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_users_on_state_id" ON "users" ("state_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id" FROM "ausers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191012205241"]]
+  [1m[36mTRANSACTION (111.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRequests (20191012212940)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_8ead8b1e6b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_requests_on_user_id" ON "requests" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191012212940"]]
+  [1m[36mTRANSACTION (116.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLawyerToUsers (20191012214006)
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "lawyer_id" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_users_on_lawyer_id" ON "users" ("lawyer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "state_id" integer DEFAULT NULL, "lawyer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_lawyer_id" ON "ausers" ("lawyer_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_state_id" ON "ausers" ("state_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id","lawyer_id")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id","lawyer_id" FROM "users"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "state_id" integer DEFAULT NULL, "lawyer_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_606ec65343"
+FOREIGN KEY ("state_id")
+  REFERENCES "states" ("id")
+, CONSTRAINT "fk_rails_78698cfdec"
+FOREIGN KEY ("lawyer_id")
+  REFERENCES "lawyers" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_state_id" ON "users" ("state_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_users_on_lawyer_id" ON "users" ("lawyer_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id","lawyer_id")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","state_id","lawyer_id" FROM "ausers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191012214006"]]
+  [1m[36mTRANSACTION (140.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-13 18:32:11.467163"], ["updated_at", "2019-10-13 18:32:11.467163"]]
+  [1m[36mTRANSACTION (85.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from block in <main> at /home/pc/.rvm/gems/ruby-2.6.5/gems/coffee-rails-4.2.2/lib/coffee/rails/template_handler.rb:17)
+Started GET "/" for ::1 at 2019-10-13 15:32:23 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 69ms (ActiveRecord: 0.0ms | Allocations: 1686)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:32:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 34.9ms | Allocations: 728)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 69.0ms | Allocations: 4024)
+Completed 200 OK in 4663ms (Views: 4580.9ms | ActiveRecord: 6.6ms | Allocations: 723808)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-13 15:32:44 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z8VRtFlAEPMCji7WZ1TvRkzzH+FxKugmBqiauz4/Usi+lqJn8VV1/U9Vpxf0lpzDZsvPoHMT4kHG9/OWfRQfoA==", "user"=>{"email"=>"ferreira.rafaelc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ferreira.rafaelc@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.6ms | Allocations: 2064)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z8VRtFlAEPMCji7WZ1TvRkzzH+FxKugmBqiauz4/Usi+lqJn8VV1/U9Vpxf0lpzDZsvPoHMT4kHG9/OWfRQfoA==", "user"=>{"email"=>"ferreira.rafaelc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 170)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1110)
+Completed 200 OK in 371ms (Views: 171.0ms | ActiveRecord: 0.0ms | Allocations: 45976)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-13 15:32:56 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  [1m[36mState Load (0.6ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/devise/registrations/new.html.erb:14:in `map'
+  Rendered devise/shared/_links.html.erb (Duration: 2.4ms | Allocations: 151)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 30.6ms | Allocations: 3237)
+Completed 200 OK in 233ms (Views: 227.7ms | ActiveRecord: 1.4ms | Allocations: 47774)
+
+
+Started GET "/states/new" for ::1 at 2019-10-13 15:33:31 -0300
+Processing by StatesController#new as HTML
+  Rendering states/new.html.erb within layouts/application
+  Rendered states/_form.html.erb (Duration: 7.0ms | Allocations: 955)
+  Rendered states/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1301)
+Completed 200 OK in 143ms (Views: 129.5ms | ActiveRecord: 0.9ms | Allocations: 48309)
+
+
+Started POST "/states" for ::1 at 2019-10-13 15:33:36 -0300
+Processing by StatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0OS74XxEknT3k1I/IVWT7v+9V0DpjFKs+ey/RQUBrGoJt0gy1FH3erpI2/6yl+Br1YWHAeu1WMs5s9ZoRirhAg==", "state"=>{"uf"=>"CE"}, "commit"=>"Create State"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:30:in `block in create'
+  [1m[36mState Create (0.8ms)[0m  [1m[32mINSERT INTO "states" ("uf", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["uf", "CE"], ["created_at", "2019-10-13 18:33:36.116006"], ["updated_at", "2019-10-13 18:33:36.116006"]]
+  ↳ app/controllers/states_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (221.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/states/1
+Completed 302 Found in 237ms (ActiveRecord: 222.7ms | Allocations: 3240)
+
+
+Started GET "/states/1" for ::1 at 2019-10-13 15:33:36 -0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mState Load (0.5ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:67:in `set_state'
+  Rendering states/show.html.erb within layouts/application
+  Rendered states/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 246)
+Completed 200 OK in 125ms (Views: 118.5ms | ActiveRecord: 0.5ms | Allocations: 44632)
+
+
+Started GET "/states" for ::1 at 2019-10-13 15:33:42 -0300
+Processing by StatesController#index as HTML
+  Rendering states/index.html.erb within layouts/application
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.html.erb:14
+  Rendered states/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 890)
+Completed 200 OK in 205ms (Views: 199.7ms | ActiveRecord: 0.3ms | Allocations: 44521)
+
+
+Started GET "/states/new" for ::1 at 2019-10-13 15:33:46 -0300
+Processing by StatesController#new as HTML
+  Rendering states/new.html.erb within layouts/application
+  Rendered states/_form.html.erb (Duration: 3.4ms | Allocations: 529)
+  Rendered states/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 621)
+Completed 200 OK in 180ms (Views: 177.9ms | ActiveRecord: 0.0ms | Allocations: 44115)
+
+
+Started POST "/states" for ::1 at 2019-10-13 15:33:50 -0300
+Processing by StatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oy7eO1E+midjeESyxvTwiKc5aBZ4hpJi/J/I2aqyK0FgVVKxdsDA8bCpVCc6MLSG/NxxkRq0GmJQ3WUKgSewfg==", "state"=>{"uf"=>"RN"}, "commit"=>"Create State"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:30:in `block in create'
+  [1m[36mState Create (0.8ms)[0m  [1m[32mINSERT INTO "states" ("uf", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["uf", "RN"], ["created_at", "2019-10-13 18:33:50.921459"], ["updated_at", "2019-10-13 18:33:50.921459"]]
+  ↳ app/controllers/states_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (174.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/states/2
+Completed 302 Found in 202ms (ActiveRecord: 174.9ms | Allocations: 3051)
+
+
+Started GET "/states/2" for ::1 at 2019-10-13 15:33:51 -0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:67:in `set_state'
+  Rendering states/show.html.erb within layouts/application
+  Rendered states/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 89)
+Completed 200 OK in 210ms (Views: 200.0ms | ActiveRecord: 0.4ms | Allocations: 44203)
+
+
+Started GET "/states" for ::1 at 2019-10-13 15:33:52 -0300
+Processing by StatesController#index as HTML
+  Rendering states/index.html.erb within layouts/application
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.html.erb:14
+  Rendered states/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 748)
+Completed 200 OK in 120ms (Views: 117.9ms | ActiveRecord: 0.4ms | Allocations: 44222)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:33:57 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:33:57 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 170)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1112)
+Completed 200 OK in 125ms (Views: 122.2ms | ActiveRecord: 0.0ms | Allocations: 44807)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-13 15:33:59 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/devise/registrations/new.html.erb:14:in `map'
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 101)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1880)
+Completed 200 OK in 141ms (Views: 137.9ms | ActiveRecord: 0.3ms | Allocations: 45540)
+
+
+Started POST "/users" for ::1 at 2019-10-13 15:34:22 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OyfaA8QIWtfHlut07sZFsVzr894FHmUObaQvr7xySCdQvvmEqwJoiiQec1ib7SGrQ5lbewWpSjYNkhKnHbSefA==", "user"=>{"email"=>"denis@mendes", "state_id"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "denis@mendes"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "state_id") VALUES (?, ?, ?, ?, ?)[0m  [["email", "denis@mendes"], ["encrypted_password", "$2a$11$f/jTru44TmDiEQtnv2ofue6tX0cI7.OwYhJtC2SLrzbpBaJ.Drm.S"], ["created_at", "2019-10-13 18:34:22.952803"], ["updated_at", "2019-10-13 18:34:22.952803"], ["state_id", 1]]
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 340ms (ActiveRecord: 90.6ms | Allocations: 10588)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:34:23 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 1981)
+Completed 200 OK in 218ms (Views: 192.3ms | ActiveRecord: 2.6ms | Allocations: 49004)
+
+
+Started GET "/requests/new" for ::1 at 2019-10-13 15:34:26 -0300
+Processing by RequestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (Duration: 5.2ms | Allocations: 1020)
+  Rendered requests/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1955)
+Completed 200 OK in 148ms (Views: 123.4ms | ActiveRecord: 1.1ms | Allocations: 49788)
+
+
+Started POST "/requests" for ::1 at 2019-10-13 15:34:39 -0300
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8mGUtHT/DX1Uw3Qhxn8MCiJX6erFitL+lJgsVynreppkL9owmSkhHyQYRGYsUgB9pYiDWDRqS+jlju+tQRMaDQ==", "request"=>{"description"=>"Indenização"}, "commit"=>"Create Request"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLawyer Load (2.4ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE (state_id) ORDER BY "lawyers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:35:in `create'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 4.7ms | Allocations: 4014)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/requests_controller.rb:36:in `create'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/lawyers" for ::1 at 2019-10-13 15:35:00 -0300
+Processing by LawyersController#index as HTML
+  Rendering lawyers/index.html.erb within layouts/application
+  [1m[36mLawyer Load (0.6ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers"[0m
+  ↳ app/views/lawyers/index.html.erb:16
+  Rendered lawyers/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1657)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 205ms (Views: 200.7ms | ActiveRecord: 0.9ms | Allocations: 47010)
+
+
+Started GET "/lawyers/new" for ::1 at 2019-10-13 15:35:02 -0300
+Processing by LawyersController#new as HTML
+  Rendering lawyers/new.html.erb within layouts/application
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/lawyers/_form.html.erb:30:in `map'
+  Rendered lawyers/_form.html.erb (Duration: 10.2ms | Allocations: 1931)
+  Rendered lawyers/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2856)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 156ms (Views: 133.8ms | ActiveRecord: 0.7ms | Allocations: 50326)
+
+
+Started GET "/lawyers/new" for ::1 at 2019-10-13 15:35:17 -0300
+Processing by LawyersController#new as HTML
+  Rendering lawyers/new.html.erb within layouts/application
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/lawyers/_form.html.erb:30:in `map'
+  Rendered lawyers/_form.html.erb (Duration: 11.7ms | Allocations: 1426)
+  Rendered lawyers/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2081)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 139ms (Views: 136.3ms | ActiveRecord: 0.7ms | Allocations: 46273)
+
+
+Started POST "/lawyers" for ::1 at 2019-10-13 15:35:23 -0300
+Processing by LawyersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e69eg/FYMY3vGXboZCidHqWhzmYtCzrx+OCM266v5uyi/K1QWU1Ug6LC/yn36u6bj5keJy8yMJY4v+X27YSrhA==", "lawyer"=>{"name"=>"denis", "state_id"=>"1"}, "commit"=>"Create Lawyer"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+  [1m[36mLawyer Create (0.9ms)[0m  [1m[32mINSERT INTO "lawyers" ("name", "state_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "denis"], ["state_id", 1], ["created_at", "2019-10-13 18:35:23.257468"], ["updated_at", "2019-10-13 18:35:23.257468"]]
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (89.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/lawyers/1
+Completed 302 Found in 142ms (ActiveRecord: 91.2ms | Allocations: 8063)
+
+
+Started GET "/lawyers/1" for ::1 at 2019-10-13 15:35:23 -0300
+Processing by LawyersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLawyer Load (0.6ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE "lawyers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lawyers_controller.rb:67:in `set_lawyer'
+  Rendering lawyers/show.html.erb within layouts/application
+  Rendered lawyers/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 858)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 129ms (Views: 122.5ms | ActiveRecord: 0.9ms | Allocations: 45743)
+
+
+Started GET "/lawyers" for ::1 at 2019-10-13 15:35:25 -0300
+Processing by LawyersController#index as HTML
+  Rendering lawyers/index.html.erb within layouts/application
+  [1m[36mLawyer Load (0.3ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers"[0m
+  ↳ app/views/lawyers/index.html.erb:16
+  Rendered lawyers/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1979)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 168ms (Views: 165.7ms | ActiveRecord: 0.6ms | Allocations: 46162)
+
+
+Started GET "/lawyers/new" for ::1 at 2019-10-13 15:35:29 -0300
+Processing by LawyersController#new as HTML
+  Rendering lawyers/new.html.erb within layouts/application
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/lawyers/_form.html.erb:30:in `map'
+  Rendered lawyers/_form.html.erb (Duration: 7.9ms | Allocations: 1428)
+  Rendered lawyers/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2083)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 128ms (Views: 125.5ms | ActiveRecord: 0.6ms | Allocations: 46274)
+
+
+Started GET "/lawyers/new" for ::1 at 2019-10-13 15:35:39 -0300
+Processing by LawyersController#new as HTML
+  Rendering lawyers/new.html.erb within layouts/application
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/lawyers/_form.html.erb:30:in `map'
+  Rendered lawyers/_form.html.erb (Duration: 9.4ms | Allocations: 1426)
+  Rendered lawyers/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2081)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 135ms (Views: 131.0ms | ActiveRecord: 0.6ms | Allocations: 46266)
+
+
+Started POST "/lawyers" for ::1 at 2019-10-13 15:35:51 -0300
+Processing by LawyersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NrMff6uiFLo0kR7nwVR+Kms2Pt1mZZvDrYqKq4FLDYPv4OysA7dxtHlKlyZSlg2vQQ7unGRckaRt1eOGwmBA6w==", "lawyer"=>{"name"=>"rafa", "state_id"=>"2"}, "commit"=>"Create Lawyer"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+  [1m[36mLawyer Create (0.8ms)[0m  [1m[32mINSERT INTO "lawyers" ("name", "state_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "rafa"], ["state_id", 2], ["created_at", "2019-10-13 18:35:51.906614"], ["updated_at", "2019-10-13 18:35:51.906614"]]
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (183.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lawyers_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/lawyers/2
+Completed 302 Found in 208ms (ActiveRecord: 184.7ms | Allocations: 3926)
+
+
+Started GET "/lawyers/2" for ::1 at 2019-10-13 15:35:52 -0300
+Processing by LawyersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLawyer Load (0.3ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE "lawyers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lawyers_controller.rb:67:in `set_lawyer'
+  Rendering lawyers/show.html.erb within layouts/application
+  Rendered lawyers/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 559)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 133ms (Views: 127.8ms | ActiveRecord: 0.7ms | Allocations: 45344)
+
+
+Started GET "/lawyers" for ::1 at 2019-10-13 15:35:57 -0300
+Processing by LawyersController#index as HTML
+  Rendering lawyers/index.html.erb within layouts/application
+  [1m[36mLawyer Load (3.6ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers"[0m
+  ↳ app/views/lawyers/index.html.erb:16
+  Rendered lawyers/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2716)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 175ms (Views: 169.2ms | ActiveRecord: 3.9ms | Allocations: 46912)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:36:15 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1005)
+Completed 200 OK in 122ms (Views: 114.9ms | ActiveRecord: 0.7ms | Allocations: 45448)
+
+
+Started GET "/requests/new" for ::1 at 2019-10-13 15:36:19 -0300
+Processing by RequestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (Duration: 3.9ms | Allocations: 632)
+  Rendered requests/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1287)
+Completed 200 OK in 133ms (Views: 125.3ms | ActiveRecord: 0.3ms | Allocations: 45704)
+
+
+Started POST "/requests" for ::1 at 2019-10-13 15:36:25 -0300
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VUI4pfbwjwexHlnhGlb8l0Dufpmq5WZoG8JbHjTDapzDDHYhGyajZcHFaabwe/DgxzEUK1sF/35q1JjkXDsKCw==", "request"=>{"description"=>"Indenização"}, "commit"=>"Create Request"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLawyer Load (0.5ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE (state_id) ORDER BY "lawyers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:35:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "lawyer_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["lawyer_id", 1], ["updated_at", "2019-10-13 18:36:25.401175"], ["id", 1]]
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (218.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Indenização"], ["user_id", 1], ["created_at", "2019-10-13 18:36:25.638783"], ["updated_at", "2019-10-13 18:36:25.638783"]]
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+  [1m[36mTRANSACTION (137.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+Redirected to http://localhost:3000/requests/1
+Completed 302 Found in 402ms (ActiveRecord: 359.1ms | Allocations: 9509)
+
+
+Started GET "/requests/1" for ::1 at 2019-10-13 15:36:25 -0300
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:80:in `set_request'
+  Rendering requests/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:10
+  [1m[36mLawyer Load (0.4ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE "lawyers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:12
+  Rendered requests/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3635)
+Completed 200 OK in 134ms (Views: 123.4ms | ActiveRecord: 1.7ms | Allocations: 48903)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 15:36:36 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1932)
+Completed 200 OK in 173ms (Views: 161.8ms | ActiveRecord: 0.6ms | Allocations: 46355)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 15:36:48 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ybhZ+ci0yiklLlDjatblefkhtTX1NKnB/MGGVlN9dggQ66oqYKGvJ2j12SL5FJb80xlldPcNo6Y8nu97EFY7YA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 42ms (ActiveRecord: 0.3ms | Allocations: 4903)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:36:48 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 325)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:36:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 175)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1130)
+Completed 200 OK in 122ms (Views: 118.2ms | ActiveRecord: 0.0ms | Allocations: 44831)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-13 15:36:52 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  [1m[36mState Load (0.4ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/devise/registrations/new.html.erb:14:in `map'
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 103)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1875)
+Completed 200 OK in 129ms (Views: 125.9ms | ActiveRecord: 0.4ms | Allocations: 45526)
+
+
+Started POST "/users" for ::1 at 2019-10-13 15:37:12 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRGEnd1YxCf3YIdQhS/ejVx3FbTnGZGubnaKeEIlXpiW7aYiov70cCs5L4CY5rKWFuR8JKggc4xP9KMEqhhiCQ==", "user"=>{"email"=>"cliente@cliente", "state_id"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cliente@cliente"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "state_id") VALUES (?, ?, ?, ?, ?)[0m  [["email", "cliente@cliente"], ["encrypted_password", "$2a$11$q19unemObFHoftfz.PkjG.deMmg62QeIDcSyg8HQN3WD6c0/pEFti"], ["created_at", "2019-10-13 18:37:12.504452"], ["updated_at", "2019-10-13 18:37:12.504452"], ["state_id", 2]]
+  [1m[36mTRANSACTION (82.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 309ms (ActiveRecord: 84.1ms | Allocations: 5749)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:37:12 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1909)
+Completed 200 OK in 120ms (Views: 112.3ms | ActiveRecord: 0.8ms | Allocations: 46479)
+
+
+Started GET "/requests/new" for ::1 at 2019-10-13 15:37:17 -0300
+Processing by RequestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (Duration: 3.6ms | Allocations: 629)
+  Rendered requests/new.html.erb within layouts/application (Duration: 46.9ms | Allocations: 1284)
+Completed 200 OK in 167ms (Views: 159.5ms | ActiveRecord: 0.3ms | Allocations: 45708)
+
+
+Started POST "/requests" for ::1 at 2019-10-13 15:37:27 -0300
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VaHQVpyL2hFWX0v3JIE5c9H6Fr7sbOLUqEyqFirr4nljostmeKEQif2e1DdjWiYv/3wJSIPOQSPK6ZY9SMsOoA==", "request"=>{"description"=>"Reclamação"}, "commit"=>"Create Request"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLawyer Load (0.5ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE (state_id) ORDER BY "lawyers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:35:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "lawyer_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["lawyer_id", 1], ["updated_at", "2019-10-13 18:37:27.265925"], ["id", 2]]
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (116.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Reclamação"], ["user_id", 2], ["created_at", "2019-10-13 18:37:27.401450"], ["updated_at", "2019-10-13 18:37:27.401450"]]
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+  [1m[36mTRANSACTION (74.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+Redirected to http://localhost:3000/requests/2
+Completed 302 Found in 240ms (ActiveRecord: 194.0ms | Allocations: 7266)
+
+
+Started GET "/requests/2" for ::1 at 2019-10-13 15:37:27 -0300
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:80:in `set_request'
+  Rendering requests/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:10
+  [1m[36mLawyer Load (0.3ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE "lawyers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:12
+  Rendered requests/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1798)
+Completed 200 OK in 135ms (Views: 120.5ms | ActiveRecord: 1.4ms | Allocations: 46616)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 15:38:12 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2706)
+Completed 200 OK in 146ms (Views: 136.7ms | ActiveRecord: 0.8ms | Allocations: 47487)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 15:52:03 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 5915)
+Completed 200 OK in 219ms (Views: 135.9ms | ActiveRecord: 1.9ms | Allocations: 59756)
+
+
+Started GET "/requests/2" for ::1 at 2019-10-13 15:52:06 -0300
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:80:in `set_request'
+  Rendering requests/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:10
+  [1m[36mLawyer Load (0.6ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE "lawyers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:12
+  Rendered requests/show.html.erb within layouts/application (Duration: 42.7ms | Allocations: 8454)
+Completed 200 OK in 178ms (Views: 159.4ms | ActiveRecord: 2.6ms | Allocations: 53406)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 15:52:08 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 2706)
+Completed 200 OK in 157ms (Views: 146.8ms | ActiveRecord: 0.6ms | Allocations: 47118)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 15:52:12 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k0y8eUSjMc02xWOBLvvaz/tlcUqC/ma8jCWVjhObUBUf1XGJrBFSyEsiIdn5ftadMXUsRvFqsRU+OEMqiePmxA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms | Allocations: 1973)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:52:12 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:52:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1131)
+Completed 200 OK in 168ms (Views: 164.6ms | ActiveRecord: 0.0ms | Allocations: 44986)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-13 15:52:24 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6ZYybm2jvhKv78Z6eHhWOSMHqUpwxQuBX+ZDeGqDMceFUFt6gpTxQrzi/g+WjU3HgVPdmR95DHXlWavEri/inA==", "user"=>{"email"=>"denis@mendes", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "denis@mendes"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 217ms (ActiveRecord: 0.6ms | Allocations: 2750)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:52:24 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 2706)
+Completed 200 OK in 143ms (Views: 135.8ms | ActiveRecord: 0.7ms | Allocations: 47105)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 15:52:30 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DuNqqbfwrNpm2zyK4aPxZ5ONPn83PNhwHe2ooM4ZGJF+yCd3tufbpEUj4jIZrruQRwYiJZT/3kZ8KpRghGNSAQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms | Allocations: 1715)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:52:30 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:52:30 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 170)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1105)
+Completed 200 OK in 117ms (Views: 115.0ms | ActiveRecord: 0.0ms | Allocations: 44768)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-13 15:52:41 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FpBljZyz8f+PXBs3Cb6Dv0LM7/pj3PnPb0LAn+t5YFWVDzdsMu0HZVIOzzNNOjV+MwV0CbL5neMNKz+TgSZw+Q==", "user"=>{"email"=>"cliente@cliente", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cliente@cliente"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 0.3ms | Allocations: 2184)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:52:41 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2706)
+Completed 200 OK in 159ms (Views: 152.2ms | ActiveRecord: 0.6ms | Allocations: 47113)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:54:52 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 6288)
+Completed 200 OK in 217ms (Views: 149.8ms | ActiveRecord: 7.2ms | Allocations: 60798)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:54:54 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 1509)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 15:54:57 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HTCvXDmMvq78E4ILM24CQE0XSr3DDbNJLc2Y9QH0TLpMhwI5c/4UqsIeB1TkYO/mJ0Ixr69q/002InXnOHvIrw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.3ms | Allocations: 1876)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:54:57 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 326)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:54:57 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1132)
+Completed 200 OK in 122ms (Views: 119.0ms | ActiveRecord: 0.0ms | Allocations: 44979)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-13 15:55:06 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QX74gPyuwux0s07FxhCn77qbvc4hUBmGpxdFQOTSzopXHkG4loNavQtS4gdf13rqUt/mhh8Quxe03A3w6ZZnSA==", "user"=>{"email"=>"cliente@cliente", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cliente@cliente"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 219ms (ActiveRecord: 0.7ms | Allocations: 2238)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:55:06 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2706)
+Completed 200 OK in 176ms (Views: 167.9ms | ActiveRecord: 0.6ms | Allocations: 47121)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 15:55:09 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zQB5n07uVUv8XYVRVXdS62dGsuOKz+ADcYpuXuBr1txFTsH5RL6eQdd4jvEs8c12PuHRGrhaT4W9R5zHJeLU6w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms | Allocations: 1722)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:55:09 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 15:55:09 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 170)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1105)
+Completed 200 OK in 139ms (Views: 135.8ms | ActiveRecord: 0.0ms | Allocations: 44756)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-13 15:55:18 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  [1m[36mState Load (0.5ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/devise/registrations/new.html.erb:14:in `map'
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 111)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 33.5ms | Allocations: 5019)
+Completed 200 OK in 153ms (Views: 146.8ms | ActiveRecord: 3.0ms | Allocations: 48939)
+
+
+Started POST "/users" for ::1 at 2019-10-13 15:55:36 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VqE3nSOSwZNvSj+wrwbz3Uyp+LqAsSvDlZU7Al2ZaO9DGA5P4bN4yKV7QL7rwcVuj1//nJekuhZQaKPFnORbLw==", "user"=>{"email"=>"aaa@aaa", "state_id"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aaa@aaa"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "state_id") VALUES (?, ?, ?, ?, ?)[0m  [["email", "aaa@aaa"], ["encrypted_password", "$2a$11$JYDWkUO6MKq5Kp4xocB1TeN7x44cDD3PrJ7.TAekHN9k6CAGLc.4S"], ["created_at", "2019-10-13 18:55:36.669416"], ["updated_at", "2019-10-13 18:55:36.669416"], ["state_id", 2]]
+  [1m[36mTRANSACTION (100.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 340ms (ActiveRecord: 102.0ms | Allocations: 5969)
+
+
+Started GET "/" for ::1 at 2019-10-13 15:55:36 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2706)
+Completed 200 OK in 184ms (Views: 174.5ms | ActiveRecord: 0.8ms | Allocations: 47286)
+
+
+Started GET "/requests/new" for ::1 at 2019-10-13 15:55:41 -0300
+Processing by RequestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (Duration: 3.3ms | Allocations: 634)
+  Rendered requests/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1289)
+Completed 200 OK in 131ms (Views: 122.7ms | ActiveRecord: 0.3ms | Allocations: 45718)
+
+
+Started POST "/requests" for ::1 at 2019-10-13 15:55:46 -0300
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bK1LJ2on/7TREPhHUl9/11ul+eQuIZcj+pjZe+pAr4HWPz07jRR3+SEpL/HAZGMBFlcOIsN0NSrtbSwBTMG3ew==", "request"=>{"description"=>"aaaa"}, "commit"=>"Create Request"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLawyer Load (0.7ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE (state_id) ORDER BY "lawyers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:35:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "lawyer_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["lawyer_id", 1], ["updated_at", "2019-10-13 18:55:46.801403"], ["id", 3]]
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (116.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:37:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+  [1m[36mRequest Create (0.8ms)[0m  [1m[32mINSERT INTO "requests" ("description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "aaaa"], ["user_id", 3], ["created_at", "2019-10-13 18:55:46.955042"], ["updated_at", "2019-10-13 18:55:46.955042"]]
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+  [1m[36mTRANSACTION (103.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:43:in `block in create'
+Redirected to http://localhost:3000/requests/3
+Completed 302 Found in 339ms (ActiveRecord: 225.6ms | Allocations: 19103)
+
+
+Started GET "/requests/3" for ::1 at 2019-10-13 15:55:47 -0300
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:80:in `set_request'
+  Rendering requests/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:10
+  [1m[36mLawyer Load (0.4ms)[0m  [1m[34mSELECT "lawyers".* FROM "lawyers" WHERE "lawyers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/requests/show.html.erb:12
+  Rendered requests/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 3397)
+Completed 200 OK in 177ms (Views: 163.2ms | ActiveRecord: 1.9ms | Allocations: 48483)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 15:55:52 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (1.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 25.2ms | Allocations: 3503)
+Completed 200 OK in 195ms (Views: 185.8ms | ActiveRecord: 1.9ms | Allocations: 47913)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 16:05:16 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nw+4ZB6R9zp7c17M8pgu474XIXQf9DaP7mirMPOCqZj+9csjr5uAVXwtNWzyqml2yG/qlyOCE77TRHRuh9CkpQ=="}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms (ActiveRecord: 1.4ms | Allocations: 9665)
+
+
+Started GET "/" for ::1 at 2019-10-13 16:05:17 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 405)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 16:05:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 183)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1132)
+Completed 200 OK in 138ms (Views: 132.3ms | ActiveRecord: 0.0ms | Allocations: 44981)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-13 16:05:25 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r+Xb56vU53w8AdmGZ+/DaKXttuqDy68+S/yxSxPNh2B3c9Gj2fXZ9AKN7fKbRQ2ndH4BNYMibPFQ7oD+mQgnoQ==", "user"=>{"email"=>"aaa@aaa", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "aaa@aaa"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 224ms (ActiveRecord: 0.6ms | Allocations: 2232)
+
+
+Started GET "/" for ::1 at 2019-10-13 16:05:25 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 2316)
+
+
+  
+ArgumentError (Unsupported argument type: user_id (Symbol)):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/users/sign_in" for ::1 at 2019-10-13 16:06:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 49ms (ActiveRecord: 5.6ms | Allocations: 9774)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 16:06:30 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms | Allocations: 2407)
+
+
+  
+ArgumentError (Unsupported argument type: user_id (Symbol)):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/requests" for ::1 at 2019-10-13 16:06:34 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms | Allocations: 1605)
+
+
+  
+ArgumentError (Unsupported argument type: user_id (Symbol)):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/requests" for ::1 at 2019-10-13 16:07:00 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (2.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE (user_id,current_user.id)[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2299)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 7.2ms | Allocations: 13754)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: current_user.id):
+    13:     </tr>
+    14:   </thead>
+    15:   <tbody>
+    16:     <% @requests.each do |request| %>
+    17:       <tr>
+    18:         <td><%= link_to request.id, request_path(request) %></td>
+    19:         <td><%= request.description %></td>
+  
+app/views/requests/index.html.erb:16
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/requests" for ::1 at 2019-10-13 16:09:05 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 759ms (ActiveRecord: 4.0ms | Allocations: 133036)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<RequestsController:0x0000555de904e8a8>
+Did you mean?  user_session):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/requests" for ::1 at 2019-10-13 16:09:28 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 896ms (ActiveRecord: 4.7ms | Allocations: 133039)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<RequestsController:0x00007ff0c6c8b5b8>
+Did you mean?  user_session):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/requests" for ::1 at 2019-10-13 16:11:43 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 731ms (ActiveRecord: 0.4ms | Allocations: 123287)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<RequestsController:0x00007ff0c54c71e8>
+Did you mean?  user_session):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:11:50 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 927ms (ActiveRecord: 0.3ms | Allocations: 123287)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<RequestsController:0x00007ff0c6fae920>
+Did you mean?  user_session):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:12:00 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 7085)
+Completed 200 OK in 185ms (Views: 135.7ms | ActiveRecord: 5.5ms | Allocations: 61531)
+
+
+Started GET "/" for ::1 at 2019-10-13 16:18:34 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.5ms | Allocations: 11907)
+
+
+  
+NameError (uninitialized constant RequestsController::Requests):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:19:59 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 4.5ms | Allocations: 12581)
+
+
+  
+NameError (uninitialized constant RequestsController::Requests):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:20:19 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 5.4ms | Allocations: 12101)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Request without an ID):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:26:20 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 718ms (ActiveRecord: 1.4ms | Allocations: 132412)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<RequestsController:0x00007ff0c4ebab38>
+Did you mean?  user_session):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:26:51 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRequest Load (2.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE (current_user) ORDER BY "requests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:10:in `index'
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 8.5ms | Allocations: 12492)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: current_user):
+  
+app/controllers/requests_controller.rb:10:in `index'
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:28:01 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE (user_id) ORDER BY "requests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:11:in `index'
+  Rendering requests/index.html.erb within layouts/application
+  Rendered requests/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2779)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 6.0ms | Allocations: 18388)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Request:0x00007ff0c74a4880>):
+    13:     </tr>
+    14:   </thead>
+    15:   <tbody>
+    16:     <% @requests.each do |request| %>
+    17:       <tr>
+    18:         <td><%= link_to request.id, request_path(request) %></td>
+    19:         <td><%= request.description %></td>
+  
+app/views/requests/index.html.erb:16
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:29:29 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE (user_id = 3) ORDER BY "requests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:11:in `index'
+  Rendering requests/index.html.erb within layouts/application
+  Rendered requests/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2770)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 11.1ms | Allocations: 18413)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Request:0x00007ff0c58228d8>):
+    13:     </tr>
+    14:   </thead>
+    15:   <tbody>
+    16:     <% @requests.each do |request| %>
+    17:       <tr>
+    18:         <td><%= link_to request.id, request_path(request) %></td>
+    19:         <td><%= request.description %></td>
+  
+app/views/requests/index.html.erb:16
+DEPRECATION WARNING: ActionView::Base instances should be constructed with a lookup context, assignments, and a controller. (called from new at /home/pc/.rvm/gems/ruby-2.6.5/gems/web-console-3.7.0/lib/web_console/template.rb:21)
+Started GET "/" for ::1 at 2019-10-13 16:34:59 -0300
+Processing by RequestsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 34.3ms | Allocations: 7085)
+Completed 200 OK in 225ms (Views: 165.1ms | ActiveRecord: 7.7ms | Allocations: 61525)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from block in <main> at /home/pc/.rvm/gems/ruby-2.6.5/gems/coffee-rails-4.2.2/lib/coffee/rails/template_handler.rb:17)
+Started GET "/" for ::1 at 2019-10-13 17:36:10 -0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (13.8ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE (user_id = 3)[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 114.6ms | Allocations: 8645)
+Completed 200 OK in 1760ms (Views: 1608.9ms | ActiveRecord: 18.0ms | Allocations: 545847)
+
+
+Started DELETE "/requests/3" for ::1 at 2019-10-13 17:36:22 -0300
+Processing by RequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ypC9RhHCrhGfKDJ94cY50zHo3/RQEOKt5hN9vtecip2qHjNl2ip9j8n8aM8O/1+XKQfEAQvEWdbE93bh+iRruA==", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/requests_controller.rb:110:in `set_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/requests_controller.rb:100:in `destroy'
+  [1m[36mRequest Destroy (18.8ms)[0m  [1m[31mDELETE FROM "requests" WHERE "requests"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/requests_controller.rb:100:in `destroy'
+  [1m[36mTRANSACTION (94.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/requests_controller.rb:100:in `destroy'
+Redirected to http://localhost:3000/requests
+Completed 302 Found in 138ms (ActiveRecord: 114.7ms | Allocations: 4342)
+
+
+Started GET "/requests" for ::1 at 2019-10-13 17:36:23 -0300
+Processing by RequestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE (user_id = 3)[0m
+  ↳ app/views/requests/index.html.erb:16
+  Rendered requests/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1023)
+Completed 200 OK in 129ms (Views: 120.9ms | ActiveRecord: 0.9ms | Allocations: 45543)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-13 17:36:26 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ndoqjUwTnwhyFeTi3710pHLkh1NnDlEp2GL/lLEP4F/9VKSuh/tMliTBvlAwhBLgagucpjza6lL6hvTLnLcBeg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 0.3ms | Allocations: 2447)
+
+
+Started GET "/" for ::1 at 2019-10-13 17:36:26 -0300
+Processing by RequestsController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 332)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-13 17:36:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.1ms | Allocations: 728)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 31.4ms | Allocations: 2938)
+Completed 200 OK in 180ms (Views: 176.4ms | ActiveRecord: 0.0ms | Allocations: 48046)
+
+
